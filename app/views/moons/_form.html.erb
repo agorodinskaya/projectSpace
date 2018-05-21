@@ -1,0 +1,17 @@
+<%= form_for @moon do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <br>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+  <br>
+  <%= f.label :surface_area %>
+  <%= f.text_field :surface_area %>
+  <br>
+  <%= f.label :surface_gravity %>
+  <%= f.text_field :surface_gravity %>
+  <%= f.submit %>
+  <% end %>

@@ -1,0 +1,14 @@
+<h1>Moon <%= @moon.name %> </h1>
+<%= @moon.description %>
+
+<% if @moon.image_url.present? %>
+  <%= image_tag @moon.image_url %>
+  <% end %>
+
+<br>
+<br>
+<% if @current_user.present? %>
+<%= link_to 'Edit', edit_moon_path( @moon ) %>
+|
+<%= link_to 'Delete', moon_path( @moon ), method: 'delete' %>
+<% end %>

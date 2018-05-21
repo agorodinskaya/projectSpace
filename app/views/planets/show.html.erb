@@ -1,0 +1,24 @@
+<h1>Planet <%= @planet.name %> </h1>
+<%= @planet.description %>
+
+<% if @planet.image_url.present? %>
+  <%= image_tag @planet.image_url %>
+  <% end %>
+
+  <p>Moons
+  </p>
+  <ul>
+    <% @planet.moons.each do |m| %>
+    <li>
+      <%= link_to m.name, moon_path( m ) %>
+    </li>
+    <% end %>
+  </ul>
+
+<br>
+<br>
+<% if @current_user.present? %>
+<%= link_to 'Edit', edit_planet_path( @planet ) %>
+|
+<%= link_to 'Delete', planet_path( @planet ), method: 'delete' %>
+<% end %>

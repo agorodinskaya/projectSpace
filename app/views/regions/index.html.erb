@@ -1,0 +1,10 @@
+<h1>Solar System Regions</h1>
+<ul>
+  <% @regions.each do |r| %>
+  <li>
+    <%= link_to r.name, region_path( r ) %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create new', new_region_path( @region ) %>

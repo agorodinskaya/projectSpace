@@ -1,0 +1,11 @@
+<h1>Moons</h1>
+
+<ul>
+  <% @moons.each do |m| %>
+  <li>
+    <%= link_to m.name, moon_path( m ) %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create new', new_moon_path( @moon ) %>

@@ -5,11 +5,32 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
+  <nav>
+    <% if @current_user.present? %>
+    Welcome, <%= @current_user.username %>
+    |
+    <%= link_to 'Logout', login_path, method: :delete %>
+    <% else %>
+    <%= link_to 'Login', login_path %>
+    |
+    <%= link_to 'Sign up', new_user_path %>
+    <% end %>
+
+  </nav>
+
+  <nav>
+    <ul>
+      <%= link_to 'Solar System', regions_path( @region ) %>
+      |
+      <%= link_to 'Planets', planets_path( @planet ) %>
+      |
+      <%= link_to 'Moons', moons_path( @moon ) %>
+    </ul>
+  </nav>
     <%= yield %>
   </body>
 </html>
