@@ -1,0 +1,10 @@
+<h1>Questions # <%=question.id %></h1>
+<%= form_for @quesiton do |f| %>
+  <%= f.label(:title) %>
+  <%= f.text_field(:title) %>
+  <br>
+  <%= f.text_field(:body)%>
+  <%= f.text_area(:body, "", size => "50*50") %>
+  <br>
+  <%= f.submit %>
+<% end %>

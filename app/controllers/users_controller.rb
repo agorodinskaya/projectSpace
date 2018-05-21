@@ -7,11 +7,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create user_params
+    user = User.create user_params # look in private section Doormain
 
     if user.persisted?
       session[:user_id] = user.id
-      redirect_to user_path( user.id )
+      redirect_to user_path( user )
     else
       flash[:errors] = user.errors.full_messages
       redirect_to new_user_path
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    # redirect_to login_path and return unless @current_user.present?
+    @user = @current_user
     render :show
 
   end
@@ -41,9 +41,9 @@ class UsersController < ApplicationController
   end
 
   private
-
+  # Doormain
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :user_type)
   end
 
 end

@@ -33,6 +33,7 @@ class PlanetsController < ApplicationController
     redirect_to planets_path
   end
 
+  
   private
 
   def planet_params

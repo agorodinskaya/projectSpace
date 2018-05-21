@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_20_015517) do
+ActiveRecord::Schema.define(version: 2018_05_21_042706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2018_05_20_015517) do
     t.float "mean_radius"
     t.float "surface_gravity"
     t.float "surface_area"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "title"
+    t.text "body"
+    t.integer "planet_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "regions", force: :cascade do |t|

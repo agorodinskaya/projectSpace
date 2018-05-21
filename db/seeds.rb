@@ -59,7 +59,15 @@ p6.moons << m8
 p7.moons << m9
 p8.moons << m10
 
+
 User.destroy_all
 u1 = User.create email: 'test@create.com', username: 'test', password: 'chicken', user_type: :student
 u2 = User.create email: 'test1@destroy.com', username: 'test1', password: 'chicken', user_type: :specialist
 u3 = User.create email: 'test3@new.com', username: 'test2', password: 'chicken', user_type: :coder
+
+
+Question.destroy_all
+q1 = Question.create title: "Question 1", body: "Test question"
+
+p3.questions << q1
+u1.questions << q1
