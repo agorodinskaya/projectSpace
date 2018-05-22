@@ -11,7 +11,7 @@ class PlanetsController < ApplicationController
     planet = Planet.new planet_params
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
-      planet.image_url = req["public id"]
+      planet.image_url = req["public_id"]
     end
     planet.save
 
@@ -33,7 +33,7 @@ class PlanetsController < ApplicationController
     planet = Planet.find(params[:id])
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
-      planet.image_url = req["public id"]
+      planet.image_url = req["public_id"]
     end
     planet.update_attributes(planet_params)
     planet.save

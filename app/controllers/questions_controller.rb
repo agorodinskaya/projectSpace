@@ -51,6 +51,11 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
+  def vote
+  @vote = Vote.find(params[:id])
+  
+  end
+
   private
   def question_params
     params.require(:question).permit(:title, :body, :user_id, :planet_id, :user_type)

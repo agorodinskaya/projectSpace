@@ -5,7 +5,7 @@
 <%= link_to @question.planet.name, planet_path( @question.planet_id) %>
 <br>
 
-<button>Vote</button>
+<%= link_to "like post", like_post_path(@post), method: :put, remote: true %>
 
 
 <br>

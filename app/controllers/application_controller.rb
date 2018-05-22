@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def vote_cast
+
+  end
+
   end

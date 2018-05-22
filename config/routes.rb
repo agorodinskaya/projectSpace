@@ -9,7 +9,7 @@ delete "/login" => "session#destroy"
 
 resources :users
 
-get "/profile" => "users#profile" #, as: :user
+get "/profile" => "users#profile"
 
 
 resources :regions
@@ -20,11 +20,11 @@ resources :moons
 
 resources :questions
 
-# "/question/:id/vote" => "question#vote"
+# get "/question/:id/vote" => "question#vote"
 
 resources :replies
 
 resources :demostrations
 
-
+resources :votes
 end
