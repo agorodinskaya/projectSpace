@@ -1,0 +1,11 @@
+<%= form_for @question do |f| %>
+
+  <%= f.select :planet_id, Planet.pluck(:name, :id) %>
+  <br>
+  <%= f.label(:title) %>
+  <%= f.text_field(:title) %>
+  <br>
+  <%= f.text_area(:body, :size => "50x10") %>
+  <br>
+  <%= f.submit %>
+<% end %>

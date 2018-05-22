@@ -14,6 +14,10 @@
     Welcome, <%= @current_user.username %>
     |
     <%= link_to 'Logout', login_path, method: :delete %>
+    |
+    <%= link_to 'Ask question', new_question_path %>
+    |
+    <%= link_to 'Questions Index', questions_path %>
     <% else %>
     <%= link_to 'Login', login_path %>
     |
@@ -30,7 +34,6 @@
       |
       <%= link_to 'Moons', moons_path( @moon ) %>
       |
-      <%# link_to 'Ask question', new_question_path ( @quesiton )%>
     </ul>
   </nav>
     <%= yield %>

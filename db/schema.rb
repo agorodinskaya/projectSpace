@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_21_042706) do
+ActiveRecord::Schema.define(version: 2018_05_21_224242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "demostrations", force: :cascade do |t|
+    t.text "title"
+    t.text "body"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "moons", force: :cascade do |t|
     t.text "name"
@@ -62,6 +70,14 @@ ActiveRecord::Schema.define(version: 2018_05_21_042706) do
     t.text "name"
     t.text "description"
     t.text "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text "title"
+    t.text "body"
+    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

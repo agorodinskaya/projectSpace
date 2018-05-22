@@ -1,6 +1,7 @@
 class PlanetsController < ApplicationController
 
   before_action :get_planet, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_logged_in, except: [:index, :show]
 
   def new
     @planet = Planet.new
@@ -33,7 +34,7 @@ class PlanetsController < ApplicationController
     redirect_to planets_path
   end
 
-  
+
   private
 
   def planet_params

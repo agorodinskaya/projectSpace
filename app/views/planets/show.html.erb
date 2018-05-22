@@ -15,8 +15,16 @@
     <% end %>
   </ul>
 
-  
 
+  <p>Related questions:
+  </p>
+  <ul>
+    <% @planet.questions.each do |q| %>
+    <li>
+      <%= link_to q.title, question_path( q ) %>
+    </li>
+    <% end %>
+  </ul>
 <br>
 <br>
 <% if @current_user.present? %>
