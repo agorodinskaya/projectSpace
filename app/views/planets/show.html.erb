@@ -1,9 +1,9 @@
 <h1>Planet <%= @planet.name %> </h1>
 <%= @planet.description %>
 
-<% if @planet.image_url.present? %>
-  <%= image_tag @planet.image_url %>
-  <% end %>
+<%# if @planet.image_url.present? %>
+  <%= cl_image_tag(@planet.image_url) %>
+  <%# end %>
 
   <p>Moons
   </p>

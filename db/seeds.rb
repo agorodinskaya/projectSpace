@@ -67,7 +67,12 @@ u3 = User.create email: 'test3@new.com', username: 'test2', password: 'chicken',
 
 
 Question.destroy_all
-q1 = Question.create title: "Question 1", body: "Test question"
+q1 = Question.create title: "Roundness", body: "Is Earth round?"
 
 p3.questions << q1
 u1.questions << q1
+
+Reply.destroy_all
+l1 = Reply.create title: "Short reply", body: "Yes"
+
+q1.replies << l1

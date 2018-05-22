@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :check_if_logged_in, only: [:profile ]
+  before_action :check_if_logged_in, only: [:profile, :show ]
 
   def new
     @user = User.new

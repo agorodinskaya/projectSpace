@@ -1,4 +1,5 @@
 class Reply < ApplicationRecord
+  belongs_to :question
+  belongs_to :user
   has_many :planets, through: :questions
-  has_many :users, through: :questions
 end

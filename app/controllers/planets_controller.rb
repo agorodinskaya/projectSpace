@@ -9,6 +9,10 @@ class PlanetsController < ApplicationController
 
   def create
     planet = Planet.new planet_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      planet.image_url = req["public id"]
+    end
     planet.save
 
     redirect_to planets_path
@@ -19,13 +23,20 @@ class PlanetsController < ApplicationController
   end
 
   def show
+    @planet = Planet.find(params[:id])
   end
 
   def edit
   end
 
   def update
-    @planet.update planet_params
+    planet = Planet.find(params[:id])
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      planet.image_url = req["public id"]
+    end
+    planet.update_attributes(planet_params)
+    planet.save
     redirect_to planets_path
   end
 
@@ -38,7 +49,7 @@ class PlanetsController < ApplicationController
   private
 
   def planet_params
-    params.require(:planet).permit(:name, :image_url)
+    params.require(:planet).permit(:name)
 
   end
 
