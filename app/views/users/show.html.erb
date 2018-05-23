@@ -1,7 +1,9 @@
 <h1><%= @user.username %></h1>
 
-<code>
+
   <%= @user %>
   <%= @user.user_type %>
-  <%= @user.image_url %>
-</code>
+  <%= cl_image_tag(@user.image_url) %>
+
+<br>
+<%= link_to 'Edit', edit_user_path( @user ) %>

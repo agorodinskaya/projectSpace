@@ -51,9 +51,18 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
-  def vote
-  @vote = Vote.find(params[:id])
-  
+# Voting
+
+    def upvote
+    @question = Question.find(params[:id])
+    @question.upvote_by @current_user
+    redirect_to questions_path
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    @question.downvote_by @current_user
+    redirect_to questions_path
   end
 
   private

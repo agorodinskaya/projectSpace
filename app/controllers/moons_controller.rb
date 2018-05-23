@@ -1,6 +1,8 @@
 class MoonsController < ApplicationController
 
   before_action :get_moon, only: [:show, :edit, :update, :destroy]
+  before_action :check_if_logged_in, except: [:index, :show]
+
 
   def new
     @moon = Moon.new

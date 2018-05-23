@@ -1,4 +1,6 @@
 class RepliesController < ApplicationController
+  before_action :check_if_logged_in, except: [:index, :show]
+
   def new
     @reply = Reply.new
   end

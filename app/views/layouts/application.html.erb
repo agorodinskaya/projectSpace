@@ -10,6 +10,7 @@
     <%= cloudinary_js_config %>
   </head>
   <body>
+
   <nav>
     <% if @current_user.present? %>
     Welcome, <%= @current_user.username %>
@@ -38,5 +39,8 @@
     </ul>
   </nav>
     <%= yield %>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="clouds"></div>
   </body>
 </html>

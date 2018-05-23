@@ -61,9 +61,9 @@ p8.moons << m10
 
 
 User.destroy_all
-u1 = User.create email: 'test@create.com', username: 'test', password: 'chicken', user_type: :student
-u2 = User.create email: 'test1@destroy.com', username: 'test1', password: 'chicken', user_type: :specialist
-u3 = User.create email: 'test3@new.com', username: 'test2', password: 'chicken', user_type: :coder
+u1 = User.create email: 'test@create.com', username: 'test', password: 'chicken', password_confirmation: 'chicken', user_type: :student
+u2 = User.create email: 'test1@destroy.com', username: 'test1', password: 'chicken', password_confirmation: 'chicken', user_type: :specialist
+u3 = User.create email: 'test3@new.com', username: 'test2', password: 'chicken', password_confirmation: 'chicken', user_type: :coder
 
 
 Question.destroy_all

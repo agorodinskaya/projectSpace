@@ -1,2 +1,24 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Users</h1>
+<%= form_for(@current_user, :html => {:multipart => true}) do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :email, "Email Address" %>
+  <%= f.text_field :email %>
+  <br>
+  <%= f.label :image_url, "User Avatar: " %>
+  <%= f.cl_image_upload :image_url %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+ <br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+ <br>
+ <%= f.label :user_type %>
+ <%= f.select :user_type, User.user_types.keys %>
+  <br>
+  <%= f.submit %>
+
+<% end %>
