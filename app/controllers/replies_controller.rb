@@ -13,7 +13,7 @@ class RepliesController < ApplicationController
 
 
     reply.save
-    redirect_to replies_path
+    redirect_to questions_path
   end
 
   def index

@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'space_station/new'
-  get 'space_station/index'
-  get 'space_station/show'
-  get 'space_station/create'
-  get 'space_station/destroy'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 root to: "pages#home"
+get "/search" => "home#search"
 
 get "/login" => "session#new"
 post "/login" => "session#create"
@@ -33,4 +30,8 @@ end
 resources :replies
 
 resources :demostrations
+
+resources :space_station
+
+
 end

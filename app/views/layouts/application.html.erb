@@ -32,13 +32,13 @@
 
   <nav class = "menue">
     <ul>
+      <%= link_to 'Home', root_path %>
+      |
       <%= link_to 'Solar System', regions_path( @region ) %>
       |
       <%= link_to 'Planets', planets_path( @planet ) %>
       |
       <%= link_to 'Moons', moons_path( @moon ) %>
-      |
-      <%= link_to 'Home', root_path %>
     </ul>
   </nav>
     <%= yield %>

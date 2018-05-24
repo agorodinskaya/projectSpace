@@ -13,6 +13,8 @@ class UsersController < ApplicationController
       req = Cloudinary::Uploader.upload(params[:file])
       user.image_url = req["public_id"]
     end
+    #save before validation
+
     user.save
 
     if user.persisted?

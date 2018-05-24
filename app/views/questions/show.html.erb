@@ -2,12 +2,27 @@
 <%= @question.body %>
 
 <% if @current_user.id == @question.user_id %>
-<%= link_to @question.planet.name, planet_path( @question.planet_id) %>
 <br>
 <%= link_to 'Edit', edit_question_path( @question ) %>
 |
 <%= link_to 'Delete', question_path( @question ), method: 'delete' %>
 <% end %>
+<br>
+
+
+<p>Related planet:</p>
+<% if @question.planet.present? %>
+  <%= link_to @question.planet.name, planet_path( @question.planet_id) %>
+  <% else %>
+<% end %>
+<br>
+
+<p>Related moon:</p>
+<% if @question.moon.present? %>
+  <%= link_to @question.moon.name, moon_path( @question.moon_id) %>
+  <% else %>
+<% end %>
+
 <br>
 <br>
 <%= link_to like_question_path(@question), method: :put do %>

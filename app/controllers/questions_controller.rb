@@ -13,12 +13,20 @@ class QuestionsController < ApplicationController
 
   def create
     # raise 'hell'
-    question = Question.new question_params
-    question.user = @current_user
+    @question = Question.new question_params
+    @question.user = @current_user
+    #save before validation
+    @question.save
+
+    if @question.persisted?
+      redirect_to questions_path
+    else
+      flash[:errors] = @question.errors.full_messages
+      redirect_to new_question_path
+    end
 
 
-    question.save
-    redirect_to questions_path
+
 
   end
 
@@ -67,7 +75,7 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:title, :body, :user_id, :planet_id, :user_type)
+    params.require(:question).permit(:title, :body, :user_id, :planet_id, :user_type, :moon_id)
   end
 
   def reply_params
