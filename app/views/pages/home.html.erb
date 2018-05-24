@@ -4,6 +4,12 @@
 <% @results %>
 <%= image_tag @results["url"] %>
 <%= @results["title"] %>
+<br>
+</ul>
 
-
+<ul>
+<% @results_news %>
+<% @results_news["articles"].each do |a| %>
+  <%= a["title"] %>
+<% end %>
 </ul>

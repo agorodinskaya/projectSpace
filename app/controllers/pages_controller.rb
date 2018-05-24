@@ -1,13 +1,20 @@
 class PagesController < ApplicationController
 
   def home
-    api_key = Rails.application.secrets.nasa_api_key
-      url = "https://api.nasa.gov/planetary/apod?api_key=#{api_key}"
+    api_key_nasa = Rails.application.secrets.nasa_api_key
+      url_nasa = "https://api.nasa.gov/planetary/apod?api_key=#{api_key_nasa}"
 
-    results = HTTParty.get( url )
+    results = HTTParty.get( url_nasa )
     @results = results
     # raise "hell"
+
+    api_key_news = Rails.application.secrets.news_api_key
+    url_news = "https://newsapi.org/v2/everything?q=(space AND solarsystem)&apiKey=#{api_key_news}"
+    results_news = HTTParty.get( url_news )
+    @results_news = results_news
+    # raise "hell"
   end
+
 
 end
 

@@ -2,7 +2,7 @@
 <%= @moon.description %>
 
 <% if @moon.image_url.present? %>
-  <%= image_tag @moon.image_url %>
+  <%= image_tag @moon.image_url, class: "img moon" %>
   <% end %>
 
 <br>
@@ -12,3 +12,10 @@
 |
 <%= link_to 'Delete', moon_path( @moon ), method: 'delete' %>
 <% end %>
+
+<br>
+<p>Planets
+</p>
+<ul>
+  <%= link_to @moon.planet.name, planet_path( @moon.planet ) %>
+</ul>
