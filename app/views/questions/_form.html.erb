@@ -9,6 +9,7 @@
     <% end %>
   </ol>
 <% end %>
+
   <%= f.select :planet_id, Planet.pluck(:name, :id), :include_blank => true %>
   <%= f.select :moon_id, Moon.pluck(:name, :id), :include_blank => true %>
 

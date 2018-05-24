@@ -38,7 +38,7 @@ class MoonsController < ApplicationController
   private
 
   def moon_params
-    params.require(:moon).permit(:name, :image_url)
+    params.require(:moon).permit(:name, :image_url, :planet_id)
 
   end
 

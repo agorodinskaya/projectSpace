@@ -3,6 +3,11 @@ class PlanetsController < ApplicationController
   before_action :get_planet, only: [:show, :edit, :update, :destroy]
   before_action :check_if_logged_in, except: [:index, :show]
 
+  def search
+    terms = params[:query].split(' ')
+    results = Planet.where(" name LIKE? OR description LIKE?","%#{params[:query]}%", "%#{params[:query]}%")
+  end
+  
   def new
     @planet = Planet.new
   end

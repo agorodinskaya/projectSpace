@@ -2,7 +2,7 @@
 <h2>Picture of the day</h2>
 <ul>
 <% @results %>
-<%= image_tag @results["url"] %>
+<%= image_tag @results["url"], class: "img" %>
 <%= @results["title"] %>
 <br>
 </ul>

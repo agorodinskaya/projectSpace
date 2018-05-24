@@ -1,5 +1,7 @@
 class Reply < ApplicationRecord
   belongs_to :question
   belongs_to :user
-  has_many :planets, through: :questions
+  validates :title, :body, :presence => true
+  validates :title, :length => { :minimum => 2 }
+
 end

@@ -4,33 +4,31 @@
   <% @user %>
   <%= @user.user_type %>
   <%= cl_image_tag(@user.image_url) %>
+  <br>
+  <%= link_to 'Edit', edit_user_path( @user ) %>
 
   <style>
-  body{background: #111; margin: 0px; }
+  body{background: #111; margin: 0px; background-image: url('/assets/stars.png');}
   div#banner{
     width:100%;
     height:500px;
     margin: 0px auto;
-    background-color: #000;
-    background-image: url('/assets/Earth1.png'), url('/assets/star.png');
+    background-image: url('/assets/Earth1.png');
     background-repeat: no-repeat, repeat;
     background-position: 120%, 70px, 0px 0px;
     animation: animate-background linear 50s infinite;
   }
   @keyframes animate-background {
     from { background-position: 120% 70px, 0px 0px; }
-    to { background-position: -20% 70px, -1000px 0px; }
+    to { background-position: -20% 70px, 0px 0px; }
 
   }
   .spaceship{
-    width:300px;
-    height: 300px;
-    position: absolute;
+    width:200px;
+    height: 200px;
+    margin: 200px 0px 0px 30%;
   }
   </style>
   <div id="banner">
     <img class="spaceship" src="/assets/spaceship.png" alt="">
   </div>
-
-<br>
-<%= link_to 'Edit', edit_user_path( @user ) %>
