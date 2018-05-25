@@ -39,7 +39,7 @@
   var geometry   = new THREE.SphereGeometry(0.5, 32, 32)
   var material  = new THREE.MeshPhongMaterial({
     color: 0xFFFFFF,
-    map:  THREE.ImageUtils.loadTexture('/assets/Earth.jpg')
+    map:  THREE.ImageUtils.loadTexture('/assets/<%= Region.first.planets.first.name %>.jpg')
   });
   var earthMesh = new THREE.Mesh(geometry, material)
   scene.add(earthMesh);
