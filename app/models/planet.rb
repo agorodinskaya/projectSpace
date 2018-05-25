@@ -3,4 +3,5 @@ class Planet < ApplicationRecord
   has_many :moons
   has_many :questions
   has_many :replies, through: :questions
+  validates :name, :description, :region_id, :presence => true
 end

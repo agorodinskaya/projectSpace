@@ -9,10 +9,16 @@ class MoonsController < ApplicationController
   end
 
   def create
-    moon = Moon.new moon_params
-    moon.save
+    @moon = Moon.new moon_params
+    @moon.save
 
-    redirect_to moons_path
+    if @moon.persisted?
+      redirect_to moons_path
+
+    else
+      flash[:errors] = @moon.errors.full_messages
+      redirect_to new_moon_path
+    end
   end
 
   def index
@@ -38,7 +44,7 @@ class MoonsController < ApplicationController
   private
 
   def moon_params
-    params.require(:moon).permit(:name, :image_url, :planet_id)
+    params.require(:moon).permit(:name, :description, :image_url, :planet_id)
 
   end
 

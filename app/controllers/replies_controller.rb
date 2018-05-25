@@ -13,7 +13,13 @@ class RepliesController < ApplicationController
 
 
     reply.save
-    redirect_to questions_path
+
+    if reply.persisted?
+      redirect_to questions_path
+    else
+      flash[:errors] = reply.errors.full_messages
+      redirect_to question_path params[:question_id]
+    end
   end
 
   def index

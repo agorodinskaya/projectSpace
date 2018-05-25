@@ -1,8 +1,9 @@
 <h1>Moon <%= @moon.name %> </h1>
 <%= @moon.description %>
-
+<br>
+<br>
 <% if @moon.image_url.present? %>
-  <%= image_tag @moon.image_url, class: "img moon" %>
+  <%= image_tag @moon.image_url, class: "img" %>
   <% end %>
 
 <br>

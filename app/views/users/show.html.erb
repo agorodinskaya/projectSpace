@@ -3,7 +3,8 @@
 
   <% @user %>
   <%= @user.user_type %>
-  <%= cl_image_tag(@user.image_url) %>
+  <br>
+  <%= cl_image_tag(@user.image_url, class: "img") %>
   <br>
   <%= link_to 'Edit', edit_user_path( @user ) %>
 

@@ -10,15 +10,15 @@
 <br>
 
 
-<p>Related planet:</p>
 <% if @question.planet.present? %>
+<p>Related planet:</p>
   <%= link_to @question.planet.name, planet_path( @question.planet_id) %>
   <% else %>
 <% end %>
 <br>
 
-<p>Related moon:</p>
 <% if @question.moon.present? %>
+<p>Related moon:</p>
   <%= link_to @question.moon.name, moon_path( @question.moon_id) %>
   <% else %>
 <% end %>
@@ -37,11 +37,27 @@ dislike
 <br>
 <br>
 <hr>
+<p>Please type your reply below :</p>
+<% if flash[:errors] %>
+  <strong>The following errors need to be corrected :</strong>
+  <ol>
+    <% flash[:errors].each do |e| %>
+    <li>
+      <%= e %>
+    </li>
+    <% end %>
+  </ol>
+<% end %>
 <div class="reply">
   <%= form_for @reply do |r| %>
+  <div class="form-group row">
+  <div class="col-sm-10">
    <%= r.text_area :body, placeholder: 'Context' %>
+  </div>
+  </div>
    <%= hidden_field_tag :question_id, @question.id %>
-   <%= r.submit %>
+   <div class="col-sm-10">
+   <%= r.submit "Save", class: "btn btn-primary btn-lg" %>
    <% end %>
 </div>
 

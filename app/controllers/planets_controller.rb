@@ -7,7 +7,7 @@ class PlanetsController < ApplicationController
     terms = params[:query].split(' ')
     results = Planet.where(" name LIKE? OR description LIKE?","%#{params[:query]}%", "%#{params[:query]}%")
   end
-  
+
   def new
     @planet = Planet.new
   end
@@ -20,7 +20,14 @@ class PlanetsController < ApplicationController
     end
     planet.save
 
-    redirect_to planets_path
+    if planet.persisted?
+      redirect_to planets_path
+
+    else
+      flash[:errors] = planet.errors.full_messages
+      redirect_to new_planet_path
+    end
+
   end
 
   def index

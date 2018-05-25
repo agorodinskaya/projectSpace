@@ -1,4 +1,14 @@
 <%= form_for @moon do |f| %>
+<% if flash[:errors] %>
+  <strong>The following errors need to be corrected :</strong>
+  <ol>
+    <% flash[:errors].each do |e| %>
+    <li>
+      <%= e %>
+    </li>
+    <% end %>
+  </ol>
+<% end %>
 <div class="form-group row">
   <div class="col-sm-10">
   <%= f.select :planet_id, Planet.pluck(:name, :id)%>
