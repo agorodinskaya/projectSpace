@@ -21,4 +21,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Add table comparing different planets and Moons
+* Add searches through the website
+* Add demonstration features
+* Make use of user types.

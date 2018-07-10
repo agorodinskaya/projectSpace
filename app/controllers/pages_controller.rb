@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     # raise "hell"
 
     api_key_news = Rails.application.secrets.news_api_key
-    url_news = "https://newsapi.org/v2/everything?q=(space AND solarsystem)&apiKey=#{api_key_news}"
+    url_news = "https://newsapi.org/v2/everything?q=(Space)&apiKey=#{api_key_news}"
     results_news = HTTParty.get( url_news )
     @results_news = results_news
     # raise "hell"
