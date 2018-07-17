@@ -1,27 +1,23 @@
-# README
+# Project Space:
+Please follow the link to access the demo:
+[Project Space]
+https://github.com/agorodinskaya/projectSpace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Instructions:
+The website is designed for users interested in astronomy:
+- Please follow the link and sign up if you would like to ask questions about astronomy.
+- You can also access the website and different sections (except for Questions and Replies and Editing Deleting sections) without signing up.
 
-Things you may want to cover:
+_Specifications of languages, libraries and frameworks used_ :
+- Ruby 
+- Ruby on Rails
+- Three.js
+- API - NASA, News.org
+- varios Gems (bcrypt etc)
 
-* Ruby version
+When one of the players wins the game;
+_Wishlist_ : 
+- I would like to add more features to the website: e.g. video exchange between users, geo location of the space stations, rate questions etc. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* Add table comparing different planets and Moons
-* Add searches through the website
-* Add demonstration features
-* Make use of user types.
+_Known bugs_:
+- nothing known so far.
