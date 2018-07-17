@@ -15,7 +15,6 @@ _Specifications of languages, libraries and frameworks used_ :
 - API - NASA, News.org
 - varios Gems (bcrypt etc)
 
-When one of the players wins the game;
 _Wishlist_ : 
 - I would like to add more features to the website: e.g. video exchange between users, geo location of the space stations, rate questions etc. 
 
