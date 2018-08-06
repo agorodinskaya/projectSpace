@@ -1,6 +1,6 @@
 <%= form_for(@planet, :html => {:multipart => true}) do |f| %>
 <% if flash[:errors] %>
-  <strong>The following errors need to be corrected :</strong>
+  <strong>The following errors need to be corrected:</strong>
   <ol>
     <% flash[:errors].each do |e| %>
     <li>
