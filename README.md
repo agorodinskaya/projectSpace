@@ -1,7 +1,7 @@
 # Project Space:
 Please follow the link to access the demo:
 [Project Space]
-https://github.com/agorodinskaya/projectSpace
+https://projectspace2018.herokuapp.com/
 
 # Instructions:
 The website is designed for users interested in astronomy:
@@ -19,4 +19,4 @@ _Wishlist_ :
 - I would like to add more features to the website: e.g. video exchange between users, geo location of the space stations, rate questions etc. 
 
 _Known bugs_:
-- nothing known so far.
+- a few bugs found due to a couple obsolete gems - in progress of working on fixing them.
