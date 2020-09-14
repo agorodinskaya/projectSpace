@@ -1,7 +1,6 @@
 # Project Space:
 Please follow the link to access the demo:
-[Project Space Demo]
-(https://projectspace2018.herokuapp.com/)
+[Project Space Demo](https://projectspace2018.herokuapp.com/)
 
 # Instructions:
 The website is designed for users interested in astronomy:
